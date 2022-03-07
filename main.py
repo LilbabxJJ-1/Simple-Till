@@ -17,20 +17,21 @@ while script:
        print("Item not found") #If not in the dictionary
 
 #Gets price the user will recieve based qauntity or weight
-quantity = "N/A"
-weight = "N/A"
+
 if item_cate.get(fruit) == "quantity":
  while True:
   try:
     quantity = int(input("How many do you have? "))
+    weight = "N/A"
     break
   except ValueError:
       print("You can only use whole numbers!")
 else:
    weight = float(input("How many pounds? "))
+   quantity = "N/A"
 
 #Calculate the price based on item, cost, and amount
-def price(usript, quantity, weight):
+def price(usript, quantity=None, weight= None):
    prc = prices.get(fruit)
    if item_cate.get(fruit) == "quantity":
      total = prc * quantity
@@ -45,4 +46,4 @@ def reciept(item, price):
     print(f"{quantity} {fruit}s - ${round(ppc, 2)}")
   else:
     print(f"{weight} pounds | {fruit} - ${round(ppc, 2)}")
-reciept(items.get(usript), price(usript, quantity, weight))
+reciept(items.get(usript), ppc)
