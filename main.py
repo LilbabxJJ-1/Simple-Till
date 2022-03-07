@@ -31,14 +31,14 @@ else:
    quantity = "N/A"
 
 #Calculate the price based on item, cost, and amount
-def price(usript, quantity=None, weight= None):
+def price(quantity, weight):
    prc = prices.get(fruit)
    if item_cate.get(fruit) == "quantity":
      total = prc * quantity
    else:
       total = prc * weight
    return total
-ppc = price(usript, quantity, weight)
+ppc = price(quantity, weight)
 
 #Prints the item and the final price 
 def reciept(item, price):
